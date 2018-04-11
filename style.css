@@ -1,10 +1,12 @@
 .d6 {
-    background-color:cornflowerblue;
-    color:whitesmoke;
-    width:100px;
-    height:100px;
-    font-size:22px;
-    line-height:100px;
-    border-radius:8px;
-    text-align:center;
+    display: inline-block;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    width: 100px;
+    height: 100px;
+    font-size: 22px;
+    line-height: 100px;
+    border-radius: 8px;
+    text-align: center;
+    margin-right:5px;
 }

@@ -7,14 +7,19 @@ function addDie() {
 }
 
 function rollDie(element) {
-    element.innerText = Math.floor(Math.random() * 6 + 1);
+    var result = Math.floor(Math.random() * 6 + 1);
+    element.innerText = result;
+    return result;
 }
 
 function rollDice() {
+    var result = 0;
     var dice = document.getElementsByClassName('d6');
+    
     for (var i = 0; i < dice.length; i++)
     {
-        rollDie(dice[i]);
-        // dice[i].innerText = Math.floor(Math.random() * 6 + 1);
+        result += rollDie(dice[i]);
     }
+
+    document.getElementById('result').innerText = 'Result: ' + result;
 }
