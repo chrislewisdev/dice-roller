@@ -1,12 +1,52 @@
+body {
+    max-width: 1170px;
+    margin: 0 auto 0 auto;
+    padding: 0 10px 0 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+h1 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: 0 auto 0 auto;
+    background-color: darkred;
+    color: whitesmoke;
+    border: none;
+    font-size: 18px;
+    padding: 5px 10px 5px 10px;
+}
+button:active {
+    background-color: crimson;
+    transform: scale(0.9);
+    transition: transform 25ms;
+}
+
+#dice {
+    margin: 10px 0 10px 0;
+}
+
 .d6 {
     display: inline-block;
     background-color: cornflowerblue;
     color: whitesmoke;
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     font-size: 22px;
-    line-height: 100px;
+    line-height: 70px;
     border-radius: 8px;
     text-align: center;
-    margin-right:5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#result {
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 20px;
 }
