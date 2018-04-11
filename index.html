@@ -1,12 +1,21 @@
 <html>
-    <head>
-        <title>Dice Roller</title>
-        <link rel="stylesheet" type="text/css" href="./style.css" />
-        <script src="./scripts.js"></script>
-    </head>
-    <body>
-        <div id="die" class="die" onclick="rollDie('die')">
+
+<head>
+    <title>Dice Roller</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./scripts.js"></script>
+</head>
+
+<body>
+    <button onclick="addDie()">Add Die</button>
+
+    <div id="dice">
+        <div class="die d6">
             d6
         </div>
-    </body>
+    </div>
+
+    <button onclick="rollDice()">Roll!</button>
+</body>
+
 </html>
