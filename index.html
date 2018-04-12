@@ -8,6 +8,7 @@
     <!--
         TODO:
          - Support multiple types of dice
+         - Remove dice
          - Colour scheming
          - Dice animations
          - Result animation
@@ -15,14 +16,19 @@
 </head>
 
 <body>
-    <h1>Dice-o-matic</h1>
+    <div class="container">
+        <h1>Dice-o-matic</h1>
 
-    <button onclick="addDie()">Add Die</button>
+        <button onclick="addDie()">Add Die</button>
 
-    <div id="dice">
+        <div id="dice">
+        </div>
     </div>
 
-    <button onclick="rollDice()">Roll!</button> <span id="result"></span>
+    <div class="results-pane">
+        <button onclick="rollDice()">Roll!</button>
+        <p id="result"></p>
+    </div>
 </body>
 
 </html>
