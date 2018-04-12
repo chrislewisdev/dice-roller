@@ -22,8 +22,6 @@ button {
 }
 button:active {
     background-color: crimson;
-    transform: scale(0.9);
-    transition: transform 25ms;
 }
 
 #dice {

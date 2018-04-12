@@ -2,8 +2,16 @@
 
 <head>
     <title>Dice Roller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <script src="./scripts.js"></script>
+    <!--
+        TODO:
+         - Support multiple types of dice
+         - Colour scheming
+         - Dice animations
+         - Result animation
+    -->
 </head>
 
 <body>
@@ -12,10 +20,9 @@
     <button onclick="addDie()">Add Die</button>
 
     <div id="dice">
-        <div class="die d6">d6</div>
     </div>
 
-    <button onclick="rollDice()">Roll!</button> <span id="result">Result</span>
+    <button onclick="rollDice()">Roll!</button> <span id="result"></span>
 </body>
 
 </html>
