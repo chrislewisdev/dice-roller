@@ -38,7 +38,7 @@ function rollDice() {
             var resultElement = document.getElementById('result-tray');
             removeClass(resultElement, 'hidden');
             resultElement.innerText = result;
-        }, 2000);
+        }, 1900);
     }
 }
 
