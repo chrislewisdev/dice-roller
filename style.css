@@ -29,11 +29,11 @@ h1 {
     padding-bottom: 10px;
     background-color: rgb(84, 110, 122);
     box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 20px 0px;
+    text-align: center;
 }
 
 button {
-    display: block;
-    margin: 0 auto 0 auto;
+    display: inline-block;
     background-color: rgb(0, 145, 234);
     transition: background-color .2s ease-out;
     color: whitesmoke;
@@ -53,7 +53,7 @@ button:hover {
     margin: 10px 0 10px 0;
 }
 
-.d6 {
+.die {
     display: inline-block;
     background-color: cornflowerblue;
     color: whitesmoke;
@@ -74,6 +74,7 @@ button:hover {
     height: 90px;
     background-color: rgb(245, 245, 245);
     padding-top: 10px;
+    text-align: center;
 }
 
 .results-pane button {

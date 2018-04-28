@@ -7,7 +7,6 @@
     <script src="./scripts.js"></script>
     <!--
         TODO:
-         - Support multiple types of dice
          - Remove dice
          - Colour scheming
          - Dice animations
@@ -23,7 +22,12 @@
     </div>
     <div class="action-tray">
         <div class="container">
-            <button onclick="addDie()">Add Die</button>    
+            <button onclick="addDie('d4')">Add d4</button>
+            <button onclick="addDie('d6')">Add d6</button>
+            <button onclick="addDie('d8')">Add d8</button>
+            <button onclick="addDie('d10')">Add d10</button>
+            <button onclick="addDie('d12')">Add d12</button>
+            <button onclick="addDie('d20')">Add d20</button>
         </div>
     </div>
     <div class="container">
