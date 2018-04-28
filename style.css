@@ -51,12 +51,11 @@ button:hover {
     color: whitesmoke;
     width: 90px;
     height: 90px;
-    font-size: 22px;
     line-height: 90px;
+    font-size: 26px;
     border-radius: 8px;
     text-align: center;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin: 15px;
 }
 
 .die.rolling {
