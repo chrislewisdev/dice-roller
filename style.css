@@ -1,7 +1,9 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-rendering: optimizeLegibility;
-    margin-bottom: 80px;
+    margin: 0;
+    margin-bottom: 90px;
+    background-color: rgb(245, 245, 245);
 }
 
 .container {
@@ -10,23 +12,41 @@ body {
     padding: 0 10px 0 10px;
 }
 
+.header {
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(96, 125, 139);
+    box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 20px 0px;
+}
+
 h1 {
-    margin-top: 10px;
     text-align: center;
+    color: white;
+}
+
+.action-tray {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(84, 110, 122);
+    box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 20px 0px;
 }
 
 button {
     display: block;
     margin: 0 auto 0 auto;
-    background-color: darkred;
+    background-color: rgb(0, 145, 234);
+    transition: background-color .2s ease-out;
     color: whitesmoke;
     border: none;
     font-size: 18px;
     padding: 5px 10px 5px 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px 0px, rgba(0, 0, 0, 0.12) 0px 2px 10px 0px;
 }
 
-button:active {
-    background-color: crimson;
+button:hover {
+    background-color: rgb(64, 196, 255);
+    transition: background-color .2s ease-out;
+    cursor: pointer;
 }
 
 #dice {
@@ -51,9 +71,13 @@ button:active {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 80px;
-    background-color: white;
+    height: 90px;
+    background-color: rgb(245, 245, 245);
     padding-top: 10px;
+}
+
+.results-pane button {
+    font-size: 22px;
 }
 
 #result {
