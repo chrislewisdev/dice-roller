@@ -14,7 +14,7 @@ function rollDie(element) {
     element.innerText = '';
     window.setTimeout(function() {
         element.innerText = result;
-        element.className = element.className.replace('rolling', '');
+        removeClass(element, 'rolling');
     }, 2000);
 
     return result;
@@ -25,7 +25,6 @@ function rollDice() {
     
     var button = document.getElementById('roll-button');
     button.setAttribute('disabled', true);
-    
 
     var dice = document.getElementsByClassName('die');
     for (var i = 0; i < dice.length; i++)
@@ -35,7 +34,9 @@ function rollDice() {
 
     window.setTimeout(function() { 
         button.removeAttribute('disabled'); 
-        document.getElementById('result').innerText = 'Result: ' + result;
+        var resultElement = document.getElementById('result-tray');
+        removeClass(resultElement, 'hidden');
+        resultElement.innerText = result;
     }, 2000);
 }
 
@@ -46,5 +47,15 @@ function clearDice() {
         dice.item(0).remove();
     }
 
-    document.getElementById('result').innerText = '';
+    addClass(document.getElementById('result-tray'), 'hidden');
+}
+
+function addClass(element, className) {
+    if (!element.className.match(className)) {
+        element.className += ' ' + className;
+    }
+}
+
+function removeClass(element, className) {
+    element.className = element.className.replace(className, '');
 }

@@ -25,13 +25,16 @@
             <button onclick="addDie('d20')">+ d20</button>
         </div>
     </div>
+
     <div class="container">
         <div id="dice"></div>
     </div>
 
+    <div id="result-tray" class="result-tray hidden">0</div>
+
     <div class="action-tray">
         <div class="action-roll">
-            <button id="roll-button" onclick="rollDice()">Roll!<br /><span id="result"></span></button>
+            <button id="roll-button" onclick="rollDice()">Roll!</button>
         </div>
         <div class="action-clear">
             <button onclick="clearDice()">Reset</button>
