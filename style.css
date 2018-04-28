@@ -85,6 +85,10 @@ button:hover {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px 0px inset, rgba(0, 0, 0, 0.12) 0px 2px 10px 0px inset;
 }
 
+.action-roll button:disabled {
+    background-color: grey;
+}
+
 .action-clear {
     flex-grow: 1;
 }
@@ -105,11 +109,9 @@ button:hover {
     0% {
         transform: rotate(0deg);
     }
-
     5% {
         transform: rotate(-60deg);
     }
-
     100% {
         transform: rotate(1080deg);
     }
