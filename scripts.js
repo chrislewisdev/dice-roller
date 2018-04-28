@@ -4,50 +4,42 @@ function addDie(type) {
     die.className = 'die ' + type;
     die.innerText = type;
     diceElement.appendChild(die);
+
+    addClass(document.getElementById('result-tray'), 'hidden');
 }
 
 function rollDie(element) {
+    element.className += ' rolling';
+    element.innerText = '';
+
+    window.setTimeout(function() {
+        element.remove();
+    }, 2000);
+    
     var range = parseInt(element.className.match(/d(\d+)/)[1]);
     var result = Math.floor(Math.random() * range + 1);
-    element.className += ' rolling';
-
-    element.innerText = '';
-    window.setTimeout(function() {
-        element.innerText = result;
-        removeClass(element, 'rolling');
-    }, 2000);
-
     return result;
 }
 
 function rollDice() {
-    var result = 0;
+    var dice = document.getElementsByClassName('die');
+    if (dice.length > 0) {
+        var button = document.getElementById('roll-button');
+        button.setAttribute('disabled', true);
+        
+        var result = 0;
+        for (var i = 0; i < dice.length; i++)
+        {
+            result += rollDie(dice[i]);
+        }
     
-    var button = document.getElementById('roll-button');
-    button.setAttribute('disabled', true);
-
-    var dice = document.getElementsByClassName('die');
-    for (var i = 0; i < dice.length; i++)
-    {
-        result += rollDie(dice[i]);
+        window.setTimeout(function() { 
+            button.removeAttribute('disabled'); 
+            var resultElement = document.getElementById('result-tray');
+            removeClass(resultElement, 'hidden');
+            resultElement.innerText = result;
+        }, 2000);
     }
-
-    window.setTimeout(function() { 
-        button.removeAttribute('disabled'); 
-        var resultElement = document.getElementById('result-tray');
-        removeClass(resultElement, 'hidden');
-        resultElement.innerText = result;
-    }, 2000);
-}
-
-function clearDice() {
-    var dice = document.getElementsByClassName('die');
-
-    while (dice.item(0)) {
-        dice.item(0).remove();
-    }
-
-    addClass(document.getElementById('result-tray'), 'hidden');
 }
 
 function addClass(element, className) {
