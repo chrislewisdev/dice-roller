@@ -24,7 +24,7 @@ h1 {
     color: white;
 }
 
-.action-tray {
+.dice-tray {
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: rgb(84, 110, 122);
@@ -67,23 +67,37 @@ button:hover {
     margin-bottom: 5px;
 }
 
-.results-pane {
+.action-tray {
     position: fixed;
     bottom: 0;
     width: 100%;
+    display: flex;
     height: 90px;
     background-color: rgb(245, 245, 245);
     padding-top: 10px;
     text-align: center;
 }
 
-.results-pane button {
-    font-size: 22px;
+.action-roll {
+    flex-grow: 1;
 }
 
-#result {
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-    font-size: 20px;
+.action-roll button {
+    width: 100%;
+    height: 100%;
+}
+
+.action-clear {
+    flex-grow: 1;
+}
+
+.action-clear button {
+    width: 100%;
+    height: 100%;
+    background-color: #b71c1c;
+}
+
+.action-clear button:hover {
+    width: 100%;
+    background-color: #f44336;
 }

@@ -24,3 +24,13 @@ function rollDice() {
 
     document.getElementById('result').innerText = 'Result: ' + result;
 }
+
+function clearDice() {
+    var dice = document.getElementsByClassName('die');
+
+    while (dice.item(0)) {
+        dice.item(0).remove();
+    }
+
+    document.getElementById('result').innerText = '';
+}

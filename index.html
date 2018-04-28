@@ -7,10 +7,10 @@
     <script src="./scripts.js"></script>
     <!--
         TODO:
-         - Remove dice
-         - Colour scheming
-         - Dice animations
-         - Result animation
+        - Colour scheming
+        - Dice animations
+        - Result animation
+        - Remove individual dice (this might not really be necessary?)
     -->
 </head>
 
@@ -20,7 +20,7 @@
             <h1>Dice-o-matic</h1>
         </div>
     </div>
-    <div class="action-tray">
+    <div class="dice-tray">
         <div class="container">
             <button onclick="addDie('d4')">Add d4</button>
             <button onclick="addDie('d6')">Add d6</button>
@@ -34,9 +34,13 @@
         <div id="dice"></div>
     </div>
 
-    <div class="results-pane">
-        <button onclick="rollDice()">Roll!</button>
-        <p id="result"></p>
+    <div class="action-tray">
+        <div class="action-roll">
+            <button onclick="rollDice()">Roll!<br /><span id="result"></span></button>
+        </div>
+        <div class="action-clear">
+            <button onclick="clearDice()">Reset</button>
+        </div>
     </div>
 </body>
 
