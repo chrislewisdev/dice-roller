@@ -12,18 +12,6 @@ body {
     padding: 0 10px 0 10px;
 }
 
-.header {
-    display: inline-block;
-    width: 100%;
-    background-color: rgb(96, 125, 139);
-    box-shadow: rgba(0, 0, 0, 0.17) 0px 5px 20px 0px;
-}
-
-h1 {
-    text-align: center;
-    color: white;
-}
-
 .dice-tray {
     padding-bottom: 10px;
     background-color: rgb(84, 110, 122);
