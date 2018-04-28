@@ -25,7 +25,7 @@ function rollDice() {
     
     var button = document.getElementById('roll-button');
     button.setAttribute('disabled', true);
-    window.setTimeout(function() { button.removeAttribute('disabled'); }, 2000);
+    
 
     var dice = document.getElementsByClassName('die');
     for (var i = 0; i < dice.length; i++)
@@ -33,7 +33,10 @@ function rollDice() {
         result += rollDie(dice[i]);
     }
 
-    document.getElementById('result').innerText = 'Result: ' + result;
+    window.setTimeout(function() { 
+        button.removeAttribute('disabled'); 
+        document.getElementById('result').innerText = 'Result: ' + result;
+    }, 2000);
 }
 
 function clearDice() {
