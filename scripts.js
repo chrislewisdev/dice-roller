@@ -9,14 +9,25 @@ function addDie(type) {
 function rollDie(element) {
     var range = parseInt(element.className.match(/d(\d+)/)[1]);
     var result = Math.floor(Math.random() * range + 1);
-    element.innerText = result;
+    element.className += ' rolling';
+
+    element.innerText = '';
+    window.setTimeout(function() {
+        element.innerText = result;
+        element.className = element.className.replace('rolling', '');
+    }, 2000);
+
     return result;
 }
 
 function rollDice() {
     var result = 0;
-    var dice = document.getElementsByClassName('die');
     
+    var button = document.getElementById('roll-button');
+    button.setAttribute('disabled', true);
+    window.setTimeout(function() { button.removeAttribute('disabled'); }, 2000);
+
+    var dice = document.getElementsByClassName('die');
     for (var i = 0; i < dice.length; i++)
     {
         result += rollDie(dice[i]);
