@@ -1,23 +1,30 @@
 function addDie(type) {
+    var resultElement = document.getElementById('result-tray');
+    if (!resultElement.className.match('hidden')) {
+        clearDice();
+    }
+    addClass(resultElement, 'hidden');
+    
     var diceElement = document.getElementById('dice');
     var die = document.createElement("div");
     die.className = 'die ' + type;
     die.innerText = type;
     diceElement.appendChild(die);
-
-    addClass(document.getElementById('result-tray'), 'hidden');
 }
 
 function rollDie(element) {
     element.className += ' rolling';
     element.innerText = '';
-
-    window.setTimeout(function() {
-        element.remove();
-    }, 2000);
     
     var range = parseInt(element.className.match(/d(\d+)/)[1]);
     var result = Math.floor(Math.random() * range + 1);
+    window.setTimeout(function() {
+        element.innerText = result;
+    }, 1800);
+    window.setTimeout(function() {
+        removeClass(element, 'rolling');
+    }, 2000);
+    
     return result;
 }
 
@@ -27,6 +34,9 @@ function rollDice() {
         var button = document.getElementById('roll-button');
         button.setAttribute('disabled', true);
         
+        var resultElement = document.getElementById('result-tray');
+        addClass(resultElement, 'hidden');
+        
         var result = 0;
         for (var i = 0; i < dice.length; i++)
         {
@@ -35,11 +45,20 @@ function rollDice() {
     
         window.setTimeout(function() { 
             button.removeAttribute('disabled'); 
-            var resultElement = document.getElementById('result-tray');
             removeClass(resultElement, 'hidden');
             resultElement.innerText = result;
         }, 1900);
     }
+}
+
+function clearDice() {
+    var dice = document.getElementsByClassName('die');
+
+    while (dice.item(0)) {
+        dice.item(0).remove();
+    }
+
+    addClass(document.getElementById('result-tray'), 'hidden');
 }
 
 function addClass(element, className) {
