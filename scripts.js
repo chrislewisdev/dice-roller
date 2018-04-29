@@ -7,12 +7,13 @@ function addDie(type) {
     
     var diceElement = document.getElementById('dice');
     var die = document.createElement("div");
-    die.className = 'die ' + type;
+    die.className = 'die new ' + type;
     die.innerText = type;
     diceElement.appendChild(die);
 }
 
 function rollDie(element) {
+    removeClass(element, 'new');
     element.className += ' rolling';
     element.innerText = '';
     

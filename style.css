@@ -58,6 +58,11 @@ button:hover {
     margin: 15px;
 }
 
+.die.new {
+    animation-name: pop-in;
+    animation-duration: .15s;
+}
+
 .die.rolling {
     animation-name: roll;
     animation-duration: 2s;
@@ -128,5 +133,17 @@ button:hover {
     100% {
         transform: translateY(0px);
         color: rgba(0, 0, 0, 255);
+    }
+}
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0);
+    }
+    90% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
     }
 }
