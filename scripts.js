@@ -32,9 +32,15 @@ function rollDie(element) {
 function rollDice() {
     var dice = document.getElementsByClassName('die');
     if (dice.length > 0) {
-        var button = document.getElementById('roll-button');
-        button.setAttribute('disabled', true);
-        
+        var rollButton = document.getElementById('roll-button');
+        rollButton.setAttribute('disabled', true);
+
+        var addButtons = document.getElementsByClassName('add-button');
+        for (var i = 0; i < addButtons.length; i++)
+        {
+            addButtons[i].setAttribute('disabled', true);
+        }
+
         var resultElement = document.getElementById('result-tray');
         addClass(resultElement, 'hidden');
         
@@ -45,7 +51,12 @@ function rollDice() {
         }
     
         window.setTimeout(function() { 
-            button.removeAttribute('disabled'); 
+            rollButton.removeAttribute('disabled'); 
+            for (var i = 0; i < addButtons.length; i++)
+            {
+                addButtons[i].removeAttribute('disabled');
+            }
+
             removeClass(resultElement, 'hidden');
             resultElement.innerText = result;
         }, 1900);
